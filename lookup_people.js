@@ -1,4 +1,5 @@
 const pg = require('pg');
+var moment = require('moment');
 const settings = require('./settings');
 const client = new pg.Client(settings);
 const queryName = process.argv.slice(2)[0];
@@ -10,9 +11,7 @@ function printPeople(err, name, people){
     } else {
         console.log(`Found ${people.length} person(s) by the name '${name}':`)
         people.forEach((person, index) => {
-            const birthdate = new Date(person.birthdate)
-                .toISOString()
-                .split('T')[0];
+            const birthdate = moment(person.birthdate).format('YYYY-MM-DD');
             console.log(
                 `- ${index + 1}: ${person.first_name} ${person.last_name}, born '${birthdate}'`
             )
