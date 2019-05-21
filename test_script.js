@@ -5,7 +5,7 @@ const client = new pg.Client({
   user      : settings.user,
   password  : settings.password,
   database  : settings.database,
-  host      : settings.hostname,
+  host      : settings.host,
   port      : settings.port,
   ssl       : settings.ssl
 });
