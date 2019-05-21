@@ -1,5 +1,5 @@
 const pg = require('pg');
-var moment = require('moment');
+const moment = require('moment');
 const settings = require('./settings');
 const client = new pg.Client(settings);
 const queryName = process.argv.slice(2)[0];
