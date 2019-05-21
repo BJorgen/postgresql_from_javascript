@@ -22,7 +22,7 @@ function printPeople(err, name, people){
 //======= Connecting to the Database ==============
 client.connect((err) => {
   if (err) {
-    return console.error('Connection Error', err);
+    throw err;
   }
   
   function getPeople(name, cb) {
