@@ -4,7 +4,7 @@ const settings = require('./settings');
 const client = new pg.Client(settings);
 const queryName = process.argv.slice(2)[0];
 
-//======= Helper Function to Print People =============
+//======= Helper / Callback Function to Print People =============
 function printPeople(err, name, people){
     if (err) {
         throw err;
